@@ -1,0 +1,1022 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <meta name="color-scheme" content="dark light" />
+    <title>Amol Pomaji — Portfolio</title>
+
+    <!-- Fonts (developer vibe) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <!-- default theme is dark; JS will toggle this data attribute -->
+  <body data-theme="dark">
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress-track">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
+    <div class="App">
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <i class="logo-icon fa-solid fa-code"></i>
+            <span>Amol Pomaji</span>
+          </div>
+
+          <!-- Right side: nav links + actions -->
+          <div class="nav-right">
+            <div class="nav-links" id="nav-links">
+              <button
+                type="button"
+                onclick="scrollToSection('home')"
+                class="active"
+              >
+                Home
+              </button>
+              <button type="button" onclick="scrollToSection('about')">
+                About
+              </button>
+              <button type="button" onclick="scrollToSection('skills')">
+                Skills
+              </button>
+              <button type="button" onclick="scrollToSection('certificates')">
+                Certifications
+              </button>
+              <button type="button" onclick="scrollToSection('experience')">
+                Experience
+              </button>
+              <button type="button" onclick="scrollToSection('projects')">
+                Projects
+              </button>
+              <button type="button" onclick="scrollToSection('contact')">
+                Contact
+              </button>
+            </div>
+
+            <div class="nav-actions">
+              <!-- Theme toggle -->
+              <button
+                type="button"
+                class="theme-toggle"
+                aria-label="Toggle dark and light mode"
+              >
+                <span class="theme-icon theme-icon-sun" aria-hidden="true">
+                  <!-- sun icon -->
+                  <i class="fa-solid fa-sun"></i>
+                </span>
+                <span class="theme-icon theme-icon-moon" aria-hidden="true">
+                  <!-- moon icon -->
+                  <i class="fa-solid fa-moon"></i>
+                </span>
+              </button>
+
+              <!-- Mobile hamburger -->
+              <button
+                type="button"
+                class="nav-toggle"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="nav-links"
+              >
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section id="home" class="hero-section animate-on-scroll">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Available for Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Amol Pomaji</span>
+          </h1>
+
+          <!-- Typed text effect target -->
+          <h2 class="hero-subtitle">
+            <span id="typed-text" class="typed-text"></span>
+            <span class="typed-cursor" aria-hidden="true"></span>
+          </h2>
+
+          <p class="hero-description">
+            I am a backend-focused software developer with 3+ years of
+            experience in building secure, scalable applications using Python
+            and Django. I specialize in REST APIs, automation, databases, and
+            clean backend architecture.
+          </p>
+
+          <div class="hero-buttons">
+            <a
+              href="{% static 'docs/Lorem_ipsum.pdf' %}"
+              class="primary-button"
+              download
+            >
+              <i class="fa-solid fa-file-arrow-down"></i>
+              Download CV
+            </a>
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="scrollToSection('projects')"
+            >
+              View My Work
+            </button>
+
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="scrollToSection('contact')"
+            >
+              Contact Me
+            </button>
+          </div>
+
+          <div class="social-links">
+            <!-- GitHub -->
+            <a
+              href="https://github.com/amolpomaji"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://linkedin.com/in/amol-pomaji-786a4014b"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <!-- Email -->
+            <a
+              href="mailto:amolpomaji@gmail.com"
+              aria-label="Send email to amolpomaji@gmail.com"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <button
+          class="scroll-indicator"
+          type="button"
+          onclick="scrollToSection('about')"
+          aria-label="Scroll to About section"
+        >
+          <i class="fa-solid fa-angles-down" aria-hidden="true"></i>
+        </button>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section about-section animate-on-scroll">
+        <div class="section-container">
+          <h2 class="section-title">
+            <i class="section-icon fa-solid fa-user"></i>
+            About Me
+          </h2>
+
+          <div class="about-content">
+            <div class="about-image">
+              <img
+                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&q=80"
+                alt="Developer at work"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="about-text">
+              <h3>Building Backend Applications with Purpose</h3>
+
+              <p>
+                I am a Python & Django developer passionate about creating
+                efficient, secure and scalable backend systems. My focus is on
+                writing clean code, optimizing databases, and building
+                maintainable APIs.
+              </p>
+
+              <p>
+                I’ve previously worked in enterprise application development
+                using Mendix and PowerApps, but today I work primarily with
+                Django, PostgreSQL, and backend automation.
+              </p>
+
+              <div class="about-stats">
+                <div class="stat-item">
+                  <div class="stat-number" data-target="3" data-suffix="+">
+                    0
+                  </div>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+
+                <div class="stat-item">
+                  <div class="stat-number" data-target="20" data-suffix="+">
+                    0
+                  </div>
+                  <div class="stat-label">Projects Completed</div>
+                </div>
+
+                <div class="stat-item">
+                  <div class="stat-number" data-target="15" data-suffix="+">
+                    0
+                  </div>
+                  <div class="stat-label">Technologies</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section skills-section animate-on-scroll">
+        <div class="section-container">
+          <h2 class="section-title">
+            <i class="section-icon fa-solid fa-laptop-code"></i>
+            Skills &amp; Technologies
+          </h2>
+
+          <div class="skills-grid">
+            <!-- Backend -->
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">Backend</h3>
+                <div class="skill-badges">
+                  <span class="skill-badge">Python</span>
+                  <span class="skill-badge">Django</span>
+                  <span class="skill-badge">Django REST Framework</span>
+                  <span class="skill-badge">Flask</span>
+                  <span class="skill-badge">REST APIs</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Frontend -->
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">Frontend</h3>
+                <div class="skill-badges">
+                  <span class="skill-badge">HTML</span>
+                  <span class="skill-badge">CSS</span>
+                  <span class="skill-badge">JavaScript</span>
+                  <span class="skill-badge">Bootstrap</span>
+                  <span class="skill-badge">Tailwind CSS</span>
+                  <span class="skill-badge">AngularJS</span>
+                  <span class="skill-badge">ReactJS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">Databases</h3>
+                <div class="skill-badges">
+                  <span class="skill-badge">PostgreSQL</span>
+                  <span class="skill-badge">MySQL</span>
+                  <span class="skill-badge">SQLite</span>
+                  <span class="skill-badge">SQL</span>
+                  <span class="skill-badge">SQL Server</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data & Automation -->
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">Data & Automation</h3>
+                <div class="skill-badges">
+                  <span class="skill-badge">Power BI</span>
+                  <span class="skill-badge">Power Automate</span>
+                  <span class="skill-badge">Workflows</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">Tools</h3>
+                <div class="skill-badges">
+                  <span class="skill-badge">Docker</span>
+                  <span class="skill-badge">Git</span>
+                  <span class="skill-badge">GitHub</span>
+                  <span class="skill-badge">Postman</span>
+                  <span class="skill-badge">Linux</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Low-Code Platforms -->
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">Low-Code Platforms</h3>
+                <div class="skill-badges">
+                  <span class="skill-badge">Mendix</span>
+                  <span class="skill-badge">PowerApps</span>
+                  <span class="skill-badge">Appollo System</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animated skill radial meters -->
+          <div class="skills-metrics">
+            <div class="skill-meter animate-on-scroll" data-percent="90">
+              <div class="radial-progress">
+                <div class="radial-progress-inner">
+                  <span class="radial-label">90%</span>
+                </div>
+              </div>
+              <div class="skill-meter-caption">Backend (Python / Django)</div>
+            </div>
+
+            <div class="skill-meter animate-on-scroll" data-percent="80">
+              <div class="radial-progress">
+                <div class="radial-progress-inner">
+                  <span class="radial-label">80%</span>
+                </div>
+              </div>
+              <div class="skill-meter-caption">APIs & Integrations</div>
+            </div>
+
+            <div class="skill-meter animate-on-scroll" data-percent="75">
+              <div class="radial-progress">
+                <div class="radial-progress-inner">
+                  <span class="radial-label">75%</span>
+                </div>
+              </div>
+              <div class="skill-meter-caption">Frontend & UI</div>
+            </div>
+
+            <div class="skill-meter animate-on-scroll" data-percent="85">
+              <div class="radial-progress">
+                <div class="radial-progress-inner">
+                  <span class="radial-label">85%</span>
+                </div>
+              </div>
+              <div class="skill-meter-caption">Databases & Queries</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications Section -->
+      <section
+        id="certificates"
+        class="section certificates-section animate-on-scroll"
+      >
+        <div class="section-container">
+          <h2 class="section-title">
+            <i class="section-icon fa-solid fa-certificate"></i>
+            Certifications
+          </h2>
+
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">Mendix Rapid Certification</h3>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">
+                  Microsoft Certified: Power Platform Fundamentals
+                </h3>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">Jira Certification Badge</h3>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">
+                  Web Technology – Django Framework (Naresh IT)
+                </h3>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">Python Certification (Naresh IT)</h3>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card-content">
+                <h3 class="skill-category">
+                  Be 10X – AI Tools & ChatGPT Workshop
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section
+        id="experience"
+        class="section experience-section animate-on-scroll"
+      >
+        <div class="section-container">
+          <h2 class="section-title">
+            <i class="section-icon fa-solid fa-briefcase"></i>
+            Work Experience
+          </h2>
+
+          <div class="timeline">
+            <!-- JOB 1 -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+
+              <div class="experience-card">
+                <div class="experience-content">
+                  <div class="experience-header">
+                    <div>
+                      <h3 class="experience-title">Software Developer</h3>
+                      <p class="experience-company">
+                        Jackson & Frank India Pvt. Ltd. — Virar, Palghar
+                      </p>
+                    </div>
+
+                    <div class="experience-period">2023 – 2025</div>
+                  </div>
+
+                  <p class="experience-description">
+                    Transitioned from low-code development (Appollow System) to
+                    Python & Django after the platform crash, ensuring business
+                    continuity and long-term system stability. Designed and
+                    developed the company’s official website from scratch using
+                    Django, delivering a scalable and maintainable solution.
+                  </p>
+
+                  <ul class="experience-highlights">
+                    <li>
+                      Built a Resource Management Portal for multiple clients
+                      with secure document access.
+                    </li>
+                    <li>
+                      Implemented role-based authentication and authorization
+                      using Django’s built-in security system.
+                    </li>
+                    <li>
+                      Automated internal business processes and reporting using
+                      Python scripts and Django workflows.
+                    </li>
+                    <li>
+                      Improved operational efficiency by reducing manual work
+                      through backend automation.
+                    </li>
+                    <li>
+                      Optimized database queries and backend performance to
+                      ensure faster document retrieval and smoother application
+                      response.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- JOB 2 -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+
+              <div class="experience-card">
+                <div class="experience-content">
+                  <div class="experience-header">
+                    <div>
+                      <h3 class="experience-title">
+                        PowerApps / Mendix Developer
+                      </h3>
+                      <p class="experience-company">
+                        OmnePresent Technologies Pvt. Ltd. — Pune
+                      </p>
+                    </div>
+
+                    <div class="experience-period">2021 – 2023</div>
+                  </div>
+
+                  <p class="experience-description">
+                    Worked as a low-code developer building enterprise-grade web
+                    and mobile applications using Mendix and Microsoft
+                    PowerApps. Focused on scalable data modeling, workflow
+                    automation, application security, and third-party system
+                    integrations.
+                  </p>
+
+                  <ul class="experience-highlights">
+                    <li>
+                      Worked with domain model and non-persistent entities to
+                      design robust and scalable data structures.
+                    </li>
+                    <li>
+                      Implemented microflows, workflows, and application
+                      security with REST API and email integrations.
+                    </li>
+                    <li>
+                      Developed custom functionalities using Java actions and
+                      JavaScript actions.
+                    </li>
+                    <li>
+                      Created enterprise-grade PowerApps solutions including
+                      Canvas Apps and Model-Driven Apps.
+                    </li>
+                    <li>
+                      Collaborated with business analysts and QA teams to
+                      deliver production-ready applications.
+                    </li>
+                    <li>
+                      Worked with Power BI for data visualization and Power
+                      Automate for workflow and process automation.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section projects-section animate-on-scroll">
+        <div class="section-container">
+          <h2 class="section-title">
+            <i class="section-icon fa-solid fa-layer-group"></i>
+            Featured Projects
+          </h2>
+
+          <!-- Project filters -->
+          <div class="projects-filters">
+            <button
+              type="button"
+              class="filter-button active"
+              data-filter="all"
+            >
+              All
+            </button>
+            <button
+              type="button"
+              class="filter-button"
+              data-filter="python-django"
+            >
+              Python / Django
+            </button>
+            <button type="button" class="filter-button" data-filter="mendix">
+              Mendix
+            </button>
+            <button
+              type="button"
+              class="filter-button"
+              data-filter="power-platform"
+            >
+              Power Platform
+            </button>
+          </div>
+
+          <!-- Flip cards grid -->
+          <div class="proj-grid">
+            <!-- Project 1: Jackson & Frank Website (Django) -->
+            <div class="proj-card" data-category="python-django">
+              <div class="proj-inner">
+                <!-- FRONT -->
+                <div class="proj-face proj-front">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=900&q=80"
+                      alt="Jackson & Frank Website built with Django"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-front-content">
+                    <h3 class="project-title">
+                      Jackson &amp; Frank Official Website (Django)
+                    </h3>
+                    <p class="project-tagline">
+                      Official company website built with Django and PostgreSQL.
+                    </p>
+                    <div
+                      class="project-technologies project-technologies--compact"
+                    >
+                      <span class="tech-badge">Python</span>
+                      <span class="tech-badge">Django</span>
+                      <span class="tech-badge">PostgreSQL</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- BACK -->
+                <div class="proj-face proj-back">
+                  <div class="project-back-content">
+                    <h3 class="project-title">
+                      Jackson &amp; Frank Official Website (Django)
+                    </h3>
+                    <p class="project-description">
+                      Designed and developed the complete official company
+                      website using Django. Built multiple country-wise and
+                      contractor-wise pages, hiring guides, and published 25+
+                      blog posts with SEO-friendly structure.
+                    </p>
+                  </div>
+                  <div class="project-back-footer">
+                    <div class="project-technologies">
+                      <span class="tech-badge">Python</span>
+                      <span class="tech-badge">Django</span>
+                      <span class="tech-badge">PostgreSQL</span>
+                      <span class="tech-badge">HTML</span>
+                      <span class="tech-badge">CSS</span>
+                      <span class="tech-badge">JavaScript</span>
+                      <span class="tech-badge">Bootstrap</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: Resource Management Portal -->
+            <div class="proj-card" data-category="python-django">
+              <div class="proj-inner">
+                <!-- FRONT -->
+                <div class="proj-face proj-front">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80"
+                      alt="Resource Management Portal"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-front-content">
+                    <h3 class="project-title">Resource Management Portal</h3>
+                    <p class="project-tagline">
+                      Secure multi‑client document and resource portal with
+                      role‑based access control (RBAC).
+                    </p>
+                    <div
+                      class="project-technologies project-technologies--compact"
+                    >
+                      <span class="tech-badge">Python</span>
+                      <span class="tech-badge">Django</span>
+                      <span class="tech-badge">REST API</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- BACK -->
+                <div class="proj-face proj-back">
+                  <div class="project-back-content">
+                    <h3 class="project-title">Resource Management Portal</h3>
+                    <p class="project-description">
+                      Developed a secure document management portal for multiple
+                      clients. Implemented role-based access control, document
+                      upload &amp; download, version tracking, and automated
+                      audit logging for all user activities.
+                    </p>
+                  </div>
+                  <div class="project-back-footer">
+                    <div class="project-technologies">
+                      <span class="tech-badge">Python</span>
+                      <span class="tech-badge">Django</span>
+                      <span class="tech-badge">REST API</span>
+                      <span class="tech-badge">PostgreSQL</span>
+                      <span class="tech-badge">Authentication</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: HRMS – Time & Attendance Module -->
+            <div class="proj-card" data-category="power-platform">
+              <div class="proj-inner">
+                <!-- FRONT -->
+                <div class="proj-face proj-front">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80"
+                      alt="HRMS – Time & Attendance Module"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-front-content">
+                    <h3 class="project-title">
+                      HRMS – Time &amp; Attendance Module
+                    </h3>
+                    <p class="project-tagline">
+                      HRMS module for tracking attendance, shifts, and
+                      approvals.
+                    </p>
+                    <div
+                      class="project-technologies project-technologies--compact"
+                    >
+                      <span class="tech-badge">Canvas App</span>
+                      <span class="tech-badge">Power BI</span>
+                      <span class="tech-badge">Power Automate</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- BACK -->
+                <div class="proj-face proj-back">
+                  <div class="project-back-content">
+                    <h3 class="project-title">
+                      HRMS – Time &amp; Attendance Module
+                    </h3>
+                    <p class="project-description">
+                      Worked on the Time and Attendance module of the HRMS
+                      system to track employee attendance, shifts, and related
+                      requests. Automated attendance and shift change workflows
+                      using Power Automate and enabled reporting using Power BI.
+                    </p>
+                  </div>
+                  <div class="project-back-footer">
+                    <div class="project-technologies">
+                      <span class="tech-badge">Canvas App</span>
+                      <span class="tech-badge">Power BI</span>
+                      <span class="tech-badge">Power Automate</span>
+                      <span class="tech-badge">SQL Server 2019</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4: Medicine Donation System -->
+            <div class="proj-card" data-category="mendix">
+              <div class="proj-inner">
+                <!-- FRONT -->
+                <div class="proj-face proj-front">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80"
+                      alt="Medicine Donation System"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-front-content">
+                    <h3 class="project-title">Medicine Donation System</h3>
+                    <p class="project-tagline">
+                      Mendix-based system for managing medicine donations.
+                    </p>
+                    <div
+                      class="project-technologies project-technologies--compact"
+                    >
+                      <span class="tech-badge">Mendix</span>
+                      <span class="tech-badge">Microflows</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- BACK -->
+                <div class="proj-face proj-back">
+                  <div class="project-back-content">
+                    <h3 class="project-title">Medicine Donation System</h3>
+                    <p class="project-description">
+                      Built a Mendix-based application that allows users,
+                      pharmacies and NGOs to manage medicine donations. The
+                      system tracks donated medicines, maps them to NGOs, and
+                      maintains records of users, donations, and history to
+                      support reuse of unused medicines for people in need.
+                    </p>
+                  </div>
+                  <div class="project-back-footer">
+                    <div class="project-technologies">
+                      <span class="tech-badge">Mendix</span>
+                      <span class="tech-badge">Microflows</span>
+                      <span class="tech-badge">Email Integration</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 5: Field Service Application -->
+            <div class="proj-card" data-category="mendix">
+              <div class="proj-inner">
+                <!-- FRONT -->
+                <div class="proj-face proj-front">
+                  <div class="project-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
+                      alt="Field Service Application"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-front-content">
+                    <h3 class="project-title">Field Service Application</h3>
+                    <p class="project-tagline">
+                      Mendix-based field operations management application.
+                    </p>
+                    <div
+                      class="project-technologies project-technologies--compact"
+                    >
+                      <span class="tech-badge">Mendix</span>
+                      <span class="tech-badge">REST API</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- BACK -->
+                <div class="proj-face proj-back">
+                  <div class="project-back-content">
+                    <h3 class="project-title">Field Service Application</h3>
+                    <p class="project-description">
+                      Developed a Mendix-based Field Service application to
+                      manage end-to-end field operations. The system helps
+                      managers and supervisors monitor service teams, track
+                      resources, and improve operational efficiency and customer
+                      satisfaction.
+                    </p>
+                  </div>
+                  <div class="project-back-footer">
+                    <div class="project-technologies">
+                      <span class="tech-badge">Mendix</span>
+                      <span class="tech-badge">Microflows</span>
+                      <span class="tech-badge">REST API</span>
+                      <span class="tech-badge">Email Integration</span>
+                      <span class="tech-badge">Map Integration</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End cards -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact-section animate-on-scroll">
+        <div class="section-container">
+          <h2 class="section-title">
+            <i class="section-icon fa-solid fa-paper-plane"></i>
+            Get In Touch
+          </h2>
+
+          <div class="contact-content">
+            <div class="contact-info">
+              <h3>Let’s Work Together</h3>
+              <p>
+                Feel free to reach out for freelance work, job opportunities, or
+                collaboration.
+              </p>
+
+              <div class="contact-details">
+                <!-- Email with copy button -->
+                <div class="contact-item contact-email">
+                  <span>Email:</span>
+                  <div class="contact-email-row">
+                    <strong id="contact-email-text"
+                      >codewithpoma@gmail.com</strong
+                    >
+
+                    <button
+                      type="button"
+                      class="copy-email-button"
+                      data-email="codewithpoma@gmail.com"
+                      aria-label="Copy email address"
+                    >
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+
+                    <span class="copy-email-feedback" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-item">
+                  <span>Phone:</span>
+                  <strong>+91 8828625862 / 8237229614</strong>
+                </div>
+
+                <!-- Location -->
+                <div class="contact-item">
+                  <span>Location:</span>
+                  <strong>Pune, Maharashtra</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form-card">
+              <div class="contact-form-content">
+                <form
+                  id="contact-form"
+                  method="POST"
+                  action="{% url 'submit_contact' %}"
+                  onsubmit="formSubmit(event)"
+                >
+                  {% csrf_token %}
+
+                  <div class="form-group">
+                    {{ form.name.errors }} {{ form.name }}
+                  </div>
+
+                  <div class="form-group">
+                    {{ form.email.errors }} {{ form.email }}
+                  </div>
+
+                  <div class="form-group">
+                    {{ form.subject.errors }} {{ form.subject }}
+                  </div>
+
+                  <div class="form-group">
+                    {{ form.message.errors }} {{ form.message }}
+                  </div>
+
+                  <button type="submit" class="submit-button">
+                    Send Message
+                  </button>
+
+                  {% if messages %} {% for message in messages %}
+                  <p
+                    class="form-message {{ message.tags }}"
+                    id="form-message"
+                    aria-live="polite"
+                  >
+                    {{ message }}
+                  </p>
+                  {% endfor %} {% else %}
+                  <p
+                    class="form-message"
+                    id="form-message"
+                    aria-live="polite"
+                  ></p>
+                  {% endif %}
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <p>© 2025 Amol Pomaji — Built with Django</p>
+
+          <div class="footer-links">
+            <a
+              href="https://github.com/pydjamolpomaji"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+            <a
+              href="https://linkedin.com/in/amol-pomaji-786a4014b"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+            <a href="mailto:codewithpoma@gmail.com">Email</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Back to top button -->
+    <button type="button" class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- JS -->
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
