@@ -43,7 +43,6 @@ def submit_contact(request):
                     settings.DEFAULT_FROM_EMAIL,
                     [settings.CONTACT_RECIPIENT_EMAIL],
                     fail_silently=False,
-                    headers={"Reply-To": contact_message.email},
                 )
                 messages.success(request, "Your message has been sent successfully!")
             except Exception as e:
