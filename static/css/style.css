@@ -199,7 +199,6 @@ body[data-theme="light"] .navbar {
   font-size: 0.9rem;
   background: radial-gradient(circle at 20% 0%, #6366f1, #38bdf8);
   color: white;
-  box-shadow: 0 8px 18px rgba(37, 60, 70, 0.3);
 }
 
 /* Right side: links + actions */
@@ -263,7 +262,6 @@ body[data-theme="light"] .nav-links button:hover {
 .nav-links button.active {
   color: white;
   background: linear-gradient(135deg, #6366f1, #818cf8);
-  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.2);
 }
 
 /* Nav actions: theme toggle + mobile toggle */
@@ -294,19 +292,17 @@ body[data-theme="light"] .nav-links button:hover {
   cursor: pointer;
   padding: 0;
   color: var(--text-primary);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.3);
-  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out,
-    background 0.3s ease-out, border-color 0.3s ease-out;
+  transition: transform 0.18s ease-out, background 0.3s ease-out,
+    border-color 0.3s ease-out;
 }
 
 .theme-toggle:hover {
   transform: translateY(-1px);
-  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.4);
+  box-shadow: 0 14px 20px rgba(15, 23, 30, 0.1);
 }
 
 .theme-toggle:active {
   transform: translateY(0);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.55);
 }
 
 .theme-icon {
@@ -578,6 +574,7 @@ body[data-theme="light"] .secondary-button:hover {
 .social-links a {
   width: 40px;
   height: 40px;
+  margin-top: 0.5rem;
   border-radius: 999px;
   border: 1px solid rgba(148, 163, 184, 0.5);
   background: rgba(15, 23, 42, 0.7);
@@ -585,7 +582,6 @@ body[data-theme="light"] .secondary-button:hover {
   align-items: center;
   justify-content: center;
   color: #e5e7eb;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.5);
   transition: transform 0.18s ease-out, box-shadow 0.15s ease-out,
     border-color 0.25s ease-out, background 0.25s ease-out, color 0.25s ease-out,
     opacity 0.25s ease-out;
@@ -1714,6 +1710,10 @@ body[data-theme="light"] .scroll-progress-bar {
     padding-left: 1.7rem;
   }
 
+  .timeline-marker {
+    left: -25px;
+  }
+
   .projects-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1745,7 +1745,7 @@ body[data-theme="light"] .scroll-progress-bar {
   }
 
   .scroll-indicator {
-    bottom: 1.1rem;
+    bottom: 0.1rem;
   }
 
   .skills-metrics {

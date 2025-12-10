@@ -364,9 +364,9 @@
       if (!typedTextEl) return;
 
       const phrases = [
-        "Python & Django Backend Developer",
-        "REST API & Automation Specialist",
-        "Building Reliable Backend Systems",
+        "Python & Django Developer",
+        "Full Stack Web Developer",
+        "Software Developer",
       ];
 
       let phraseIndex = 0;
